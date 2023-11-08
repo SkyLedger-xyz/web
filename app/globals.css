@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --toastify-color-info: #3498db;
+    --toastify-color-success: #24574d;
+    --toastify-color-warning: rgb(236 236 44);
+    --toastify-color-error: rgb(225 29 72);
+}
+
+.ProseMirror p.is-editor-empty:first-child::before {
+    content: attr(data-placeholder);
+    float: left;
+    height: 0;
+    pointer-events: none;
+}
