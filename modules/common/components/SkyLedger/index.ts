@@ -1,1 +1,1 @@
-export { default as SkyLedgerDeploy } from './SkyLedgerDeploy';
+export { default as SkyLedgerHome } from './SkyLedgerHome';

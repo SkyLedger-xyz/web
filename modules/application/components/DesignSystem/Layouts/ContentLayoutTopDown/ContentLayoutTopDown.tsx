@@ -14,7 +14,7 @@ const ContentLayoutTopDown = ({ children }: ContentLayoutTopDown) => {
   const footer = findChildByRole(children, 'ContentLayoutTopDown.Footer');
 
   return (
-    <div className="m-auto flex min-h-screen max-w-[1500px] flex-col">
+    <div className="m-auto flex min-h-screen max-w-[1300px] flex-col">
       {header && <header>{header}</header>}
       <main className="flex-1 p-5">{content}</main>
       {footer && <footer>{footer}</footer>}

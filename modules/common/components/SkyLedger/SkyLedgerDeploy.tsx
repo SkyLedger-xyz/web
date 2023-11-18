@@ -37,27 +37,25 @@ const SkyLedgerDeploy = () => {
   };
 
   return (
-    <div className="flex max-w-lg items-center">
-      <Card theme="ghost">
+    <div className="flex max-w-lg flex-col items-center rounded-2xl bg-primary-800 p-6 shadow-2xl">
+      <Text spacing="m" size="l" fontWeight="bold">
+        Deploy a SkyLedger for your wallet
+      </Text>
+      {smartContractAddress && (
         <Text spacing="m" size="l" fontWeight="bold">
-          Deploy a SkyLedger for your wallet
+          Contract Deployed!
         </Text>
-        {smartContractAddress && (
-          <Text spacing="m" size="l" fontWeight="bold">
-            Contract Deployed!
-          </Text>
-        )}
-        {smartContractAddress && (
-          <Button href={`https://goerli.basescan.org/address/${smartContractAddress}`} target="_blank">
-            View
-          </Button>
-        )}
-        {!smartContractAddress && (
-          <Button onClick={handleDeploy} status={isBusy ? 'busy' : ''}>
-            Deploy SkyLedger
-          </Button>
-        )}
-      </Card>
+      )}
+      {smartContractAddress && (
+        <Button href={`https://goerli.basescan.org/address/${smartContractAddress}`} target="_blank">
+          View
+        </Button>
+      )}
+      {!smartContractAddress && (
+        <Button onClick={handleDeploy} status={isBusy ? 'busy' : ''}>
+          Deploy SkyLedger
+        </Button>
+      )}
     </div>
   );
 };
