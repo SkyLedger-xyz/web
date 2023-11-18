@@ -8,6 +8,7 @@ import NextTopLoader from 'nextjs-toploader';
 
 import Toaster from '@/modules/application/components/Toaster';
 import { MODAL_ROOT_ID } from '@/modules/application/utils/modals';
+import { ThirdwebProvider } from '@/modules/common/components/ThirdWeb/ThirdwebProvider';
 
 const satoshi = localFont({ src: '../fonts/satoshi/Satoshi-Variable.woff2', variable: '--font-satoshi' });
 
@@ -21,7 +22,9 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
       <body className={`${satoshi.variable} relative h-full font-sans text-gray-950`}>
         <NextTopLoader color="#007DFF" showSpinner={false} shadow="0" />
         <div id={MODAL_ROOT_ID} />
-        {children}
+        <ThirdwebProvider activeChain="base-goerli" clientId={process.env.NEXT_PUBLIC_THIRD_WEB_CLIENT_ID}>
+          {children}
+        </ThirdwebProvider>
         <Toaster />
       </body>
     </html>

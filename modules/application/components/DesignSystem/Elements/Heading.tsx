@@ -15,7 +15,7 @@ const Heading = ({
   children,
   spacing = 'none',
   level = 2,
-  color = 'default',
+  color = 'white',
   textAlign = 'left',
   fontFamily = 'sans',
   size = 'm',
@@ -42,7 +42,7 @@ const Heading = ({
     'text-lg': size === 'm',
     'text-xl': size === 'l',
     'text-3xl': size === 'xl',
-    'text-4xl': size === 'xxl',
+    'text-5xl': size === 'xxl',
     'text-6xl md:text-8xl': size === 'xxxl',
 
     'leading-tighter tracking-tighter': level === 0 || level === 1,

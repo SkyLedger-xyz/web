@@ -4,6 +4,7 @@ import { getRootUrl } from '@/models/application/services/UrlService';
 import { ContentLayoutTopDown, Heading, Stack } from '@/modules/application/components/DesignSystem';
 import { Footer } from '@/modules/application/components/Footer';
 import { APPLICATION_DESCRIPTION, APPLICATION_NAME } from '@/modules/application/constants/applicationConstants';
+import { SkyLedgerDeploy } from '@/modules/common/components/SkyLedger';
 import SkyledgerLogo from '@/modules/common/components/SkyledgerLogo';
 
 export const metadata: Metadata = {
@@ -18,14 +19,20 @@ export default async function IndexPage() {
       <ContentLayoutTopDown>
         <ContentLayoutTopDown.Content>
           <div className="m-auto my-12 max-w-4xl">
-            <Stack spacing="xl" alignItems="center">
+            <Stack spacing="m" alignItems="center">
               <Stack.Item>
                 <SkyledgerLogo />
               </Stack.Item>
               <Stack.Item>
-                <Heading level={1} size="xxxl" color="white" textAlign="center">
-                  Hi, Early Testers!
+                <Heading fontWeight="bold" size="xxl">
+                  SkyLedger
                 </Heading>
+              </Stack.Item>
+              <Stack.Item>
+                <Heading size="xl">The blockchain pilot logbook</Heading>
+              </Stack.Item>
+              <Stack.Item>
+                <SkyLedgerDeploy />
               </Stack.Item>
             </Stack>
           </div>
