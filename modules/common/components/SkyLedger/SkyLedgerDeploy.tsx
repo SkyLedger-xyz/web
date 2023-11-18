@@ -7,7 +7,7 @@ import { ThirdwebSDK } from '@thirdweb-dev/sdk';
 import { ethers } from 'ethers';
 import { toast } from 'react-toastify';
 
-import { Button, Text, Card } from '@/modules/application/components/DesignSystem';
+import { Button, Text } from '@/modules/application/components/DesignSystem';
 
 const SkyLedgerDeploy = () => {
   const [smartContractAddress, setSmartContractAddress] = useState(null);
@@ -37,8 +37,8 @@ const SkyLedgerDeploy = () => {
   };
 
   return (
-    <div className="flex max-w-lg flex-col items-center rounded-2xl bg-primary-800 p-6 shadow-2xl">
-      <Text spacing="m" size="l" fontWeight="bold">
+    <div className="flex max-w-lg flex-col items-center rounded-2xl bg-primary-400 p-10 shadow-2xl">
+      <Text spacing="m" size="xl" fontWeight="bold">
         Deploy a SkyLedger for your wallet
       </Text>
       {smartContractAddress && (
@@ -48,7 +48,7 @@ const SkyLedgerDeploy = () => {
       )}
       {smartContractAddress && (
         <Button href={`https://goerli.basescan.org/address/${smartContractAddress}`} target="_blank">
-          View
+          View SkyLedger
         </Button>
       )}
       {!smartContractAddress && (
