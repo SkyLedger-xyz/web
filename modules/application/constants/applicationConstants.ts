@@ -6,4 +6,4 @@ export const isDevEnv =
   process.env.NODE_ENV === NODE_ENVIRONMENT_DEVELOPMENT || process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_REF === 'dev';
 
 export const APPLICATION_NAME = 'SkyLedger';
-export const APPLICATION_DESCRIPTION = 'The digital blockchain pilot logbook';
+export const APPLICATION_DESCRIPTION = 'The Digital Blockchain Pilot Logbook';
