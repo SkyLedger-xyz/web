@@ -3,9 +3,9 @@ import { Metadata } from 'next';
 import { getRootUrl } from '@/models/application/services/UrlService';
 import { ContentLayoutTopDown, Heading, Stack } from '@/modules/application/components/DesignSystem';
 import { Footer } from '@/modules/application/components/Footer';
+import { HeaderTopDown } from '@/modules/application/components/Header';
 import { APPLICATION_DESCRIPTION, APPLICATION_NAME } from '@/modules/application/constants/applicationConstants';
 import { SkyLedgerDeploy } from '@/modules/common/components/SkyLedger';
-import SkyledgerLogo from '@/modules/common/components/SkyledgerLogo';
 
 export const metadata: Metadata = {
   metadataBase: new URL(getRootUrl()),
@@ -17,19 +17,14 @@ export default async function IndexPage() {
   return (
     <div className="bg-gradient-to-b from-primary-500 to-primary-400">
       <ContentLayoutTopDown>
+        <ContentLayoutTopDown.Header>
+          <HeaderTopDown />
+        </ContentLayoutTopDown.Header>
         <ContentLayoutTopDown.Content>
-          <div className="m-auto my-12 max-w-4xl">
+          <div className="m-auto my-12">
             <Stack spacing="m" alignItems="center">
               <Stack.Item>
-                <SkyledgerLogo />
-              </Stack.Item>
-              <Stack.Item>
-                <Heading fontWeight="bold" size="xxl">
-                  SkyLedger
-                </Heading>
-              </Stack.Item>
-              <Stack.Item>
-                <Heading size="xl">The blockchain pilot logbook</Heading>
+                <Heading size="xxl">The Blockchain Pilot Logbook</Heading>
               </Stack.Item>
               <Stack.Item>
                 <SkyLedgerDeploy />
