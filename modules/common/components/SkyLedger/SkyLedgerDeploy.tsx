@@ -20,14 +20,13 @@ const SkyLedgerDeploy = () => {
       await window.ethereum.request({ method: 'eth_requestAccounts' });
 
       const signer = new ethers.providers.Web3Provider(window.ethereum).getSigner();
+      const address = await signer.getAddress();
 
       const sdk = ThirdwebSDK.fromSigner(signer, BaseGoerli.chainId, {
         clientId: process.env.NEXT_PUBLIC_THIRD_WEB_CLIENT_ID,
       });
 
-      const txResult = await sdk.deployer.deployPublishedContract('strangequirks.eth', 'SkyLedger', [
-        '0x0b0632FaD37B28FC643EE3Ff80D8b833190aBdAa',
-      ]);
+      const txResult = await sdk.deployer.deployPublishedContract('strangequirks.eth', 'SkyLedger', [address]);
       setSmartContractAddress(txResult);
     } catch (error) {
       toast.error('Something went wrong.');
