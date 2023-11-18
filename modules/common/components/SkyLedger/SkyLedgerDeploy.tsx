@@ -29,7 +29,7 @@ const SkyLedgerDeploy = () => {
       const txResult = await sdk.deployer.deployPublishedContract('strangequirks.eth', 'SkyLedger', [address]);
       setSmartContractAddress(txResult);
     } catch (error) {
-      toast.error('Something went wrong.');
+      toast.error('Something went wrong. Please ensure your wallet is connected and you are on Base Görli.');
       setIsBusy(false);
     }
 
