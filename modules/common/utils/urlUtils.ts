@@ -1,10 +1,3 @@
-import isUrl from 'is-url-superb';
-
-export const isValidUrl = (url, lenient = true) => {
-  if (!url) return false;
-  return isUrl(url, { lenient });
-};
-
 export const isValidHttpUrl = (string) => {
   let url;
 
