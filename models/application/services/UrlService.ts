@@ -1,7 +1,5 @@
 import slugify from 'slugify';
 
-import { ProjectInterface } from '@/models/projects/interfaces/ProjectInterface';
-import { ReleaseInterface } from '@/models/releases/interfaces/ReleaseInterface';
 import { isDevEnv, NODE_ENVIRONMENT_DEVELOPMENT } from '@/modules/application/constants/applicationConstants';
 
 export function getRootUrl(): string {
@@ -44,49 +42,12 @@ export function getUrlProjectCreate(): string {
   return '/projects/create';
 }
 
-export function getUrlProjectInvite(project: ProjectInterface, code: string): string {
-  return `/${project.slug}/join/${code}`;
-}
-
 export function getUrlTerms(): string {
   return '/terms';
 }
 
 export function getUrlPrivacy(): string {
   return '/privacy';
-}
-
-export function getUnsubscribeUrl(token: string): string {
-  return `${getRootUrl()}/unsubscribe?token=${token}`;
-}
-
-export function getUrlProject(
-  project: ProjectInterface,
-  route: '' | 'updates' | 'settings' | 'contributors' | 'testers' = ''
-): string {
-  let url = `/${project.slug}`;
-
-  if (route) {
-    url += `/${route}`;
-  }
-
-  return url;
-}
-
-export function getUrlUserSettings(): string {
-  return `/settings`;
-}
-
-export function getUrlCreateUpdate(project: ProjectInterface): string {
-  return `${getUrlProject(project)}/updates/new`;
-}
-
-export function getUrlUpdate(project: ProjectInterface, release: ReleaseInterface): string {
-  return `${getUrlProject(project)}/updates/${release.slug}`;
-}
-
-export function getUrlManageUpdate(project: ProjectInterface, release: ReleaseInterface): string {
-  return `${getUrlUpdate(project, release)}/manage`;
 }
 
 export function getUrlXUsername(xUsername: string): string {
