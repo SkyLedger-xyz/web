@@ -7,6 +7,7 @@ import { ThirdwebSDK } from '@thirdweb-dev/sdk';
 import { ethers } from 'ethers';
 import { toast } from 'react-toastify';
 
+import { getUrlSkyLedger } from '@/models/application/services/UrlService';
 import { Button, Text } from '@/modules/application/components/DesignSystem';
 
 const SkyLedgerDeploy = () => {
@@ -47,7 +48,7 @@ const SkyLedgerDeploy = () => {
         </Text>
       )}
       {smartContractAddress && (
-        <Button href={`https://goerli.basescan.org/address/${smartContractAddress}`} target="_blank">
+        <Button href={getUrlSkyLedger(smartContractAddress)} target="_blank">
           View SkyLedger
         </Button>
       )}

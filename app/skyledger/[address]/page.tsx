@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
-import { getRootUrl } from '@/models/application/services/UrlService';
+import { getRootUrl, getUrlBaseScan } from '@/models/application/services/UrlService';
 import { ContentLayoutTopDown, Text } from '@/modules/application/components/DesignSystem';
 import { Footer } from '@/modules/application/components/Footer';
 import { HeaderTopDown } from '@/modules/application/components/Header';
@@ -26,7 +26,7 @@ export default async function SkyLedgerPage({ params }) {
         </ContentLayoutTopDown.Header>
         <ContentLayoutTopDown.Content>
           <div className="m-auto my-5">
-            <Text>{params.address}</Text>
+            <Text>{getUrlBaseScan(params.address)}</Text>
           </div>
         </ContentLayoutTopDown.Content>
         <ContentLayoutTopDown.Footer>

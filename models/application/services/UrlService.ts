@@ -26,6 +26,14 @@ export function getUrlVerifyEmail(email: string): string {
   return `/verify/email?email=${email}`;
 }
 
+export function getUrlSkyLedger(address: string): string {
+  return `/skyledger/${address}`;
+}
+
+export function getUrlBaseScan(address: string): string {
+  return `https://goerli.basescan.org/address/${address}`;
+}
+
 export function getUrlSignUp(): string {
   return `/signup`;
 }
