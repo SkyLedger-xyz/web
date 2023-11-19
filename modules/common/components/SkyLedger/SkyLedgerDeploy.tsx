@@ -43,14 +43,14 @@ const SkyLedgerDeploy = () => {
         Deploy a SkyLedger for your wallet
       </Text>
       {smartContractAddress && (
-        <Text spacing="m" size="l" fontWeight="bold">
-          Contract Deployed!
-        </Text>
-      )}
-      {smartContractAddress && (
-        <Button href={getUrlSkyLedger(smartContractAddress)} target="_blank">
-          View SkyLedger
-        </Button>
+        <div>
+          <Text spacing="m" size="l" fontWeight="bold">
+            Contract Deployed!
+          </Text>
+          <Button href={getUrlSkyLedger(smartContractAddress)} target="_blank">
+            View SkyLedger
+          </Button>
+        </div>
       )}
       {!smartContractAddress && (
         <Button onClick={handleDeploy} status={isBusy ? 'busy' : ''}>
