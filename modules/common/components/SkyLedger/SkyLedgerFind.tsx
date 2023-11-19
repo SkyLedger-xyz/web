@@ -1,5 +1,6 @@
 'use client';
 
+import { ethers } from 'ethers';
 import { Formik, Form } from 'formik';
 import { useRouter } from 'next/navigation';
 import * as yup from 'yup';
@@ -9,7 +10,17 @@ import { Button, Text } from '@/modules/application/components/DesignSystem';
 import { FormikInputField } from '@/modules/common/components/Formik';
 
 const validationSchema = yup.object().shape({
-  address: yup.string().trim().required('Enter an address'),
+  address: yup
+    .string()
+    .trim()
+    .test('isValidAddress', 'Enter a valid address', (value) => {
+      if (!value) {
+        return false;
+      }
+
+      return ethers.utils.isAddress(value);
+    })
+    .required('Enter an address'),
 });
 
 const SkyLedgerDeploy = () => {
