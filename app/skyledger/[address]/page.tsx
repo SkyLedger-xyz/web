@@ -18,6 +18,10 @@ export default async function SkyLedgerPage({ params }) {
     notFound();
   }
 
+  // get contract
+  // List existing flight logs
+  // Allow write actions too
+
   return (
     <div className="bg-gradient-to-b from-primary-600 to-primary-300">
       <ContentLayoutTopDown>
