@@ -6,6 +6,7 @@ import { ConnectWallet, useAddress, useChain } from '@thirdweb-dev/react';
 import { Text } from '@/modules/application/components/DesignSystem';
 
 import SkyLedgerDeploy from './SkyLedgerDeploy';
+import SkyLedgerFind from './SkyLedgerFind';
 
 const SkyLedgerHome = () => {
   const chain = useChain();
@@ -27,6 +28,9 @@ const SkyLedgerHome = () => {
     <div className="flex space-x-5">
       <div>
         <SkyLedgerDeploy />
+      </div>
+      <div>
+        <SkyLedgerFind />
       </div>
     </div>
   );

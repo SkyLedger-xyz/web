@@ -33,6 +33,7 @@
     "next": "13.5.4",
     "nextjs-toploader": "^1.5.3",
     "numeral": "^2.0.6",
+    "pino-pretty": "^10.2.3",
     "pluralize": "^8.0.0",
     "react": "18.2.0",
     "react-copy-to-clipboard": "^5.1.0",
@@ -40,7 +41,8 @@
     "react-sticky-17": "^6.1.0",
     "react-toastify": "^9.1.3",
     "slugify": "^1.6.6",
-    "tippy.js": "^6.3.7"
+    "tippy.js": "^6.3.7",
+    "yup": "^1.3.2"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.19.1",

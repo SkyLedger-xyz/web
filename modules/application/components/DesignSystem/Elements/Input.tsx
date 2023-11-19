@@ -48,7 +48,7 @@ const Input = forwardRef<HTMLInputElement, Input>(
       {
         'border-2 border-gray-200': theme === 'default',
         'border-0 pl-0 focus:ring-transparent': theme === 'bare',
-        'focus:ring-transparent focus:border-gray-800': status !== 'invalid' && theme === 'default',
+        'focus:ring-transparent focus:border-primary-500': status !== 'invalid' && theme === 'default',
         'border-pink-600 focus:border-pink-600 focus:ring-pink-600': status === 'invalid' && theme === 'default',
         'text-xl leading-tight tracking-tight': size === 'l',
 
